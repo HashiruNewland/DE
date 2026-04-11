@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Warehouse",
+    "displayName": "AddDWandSQLendpointToAnOtebook"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "47a749a1-b610-82eb-45ed-6355d2c827e1"
+  }
+}

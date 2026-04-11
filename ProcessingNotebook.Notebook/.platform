@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "ProcessingNotebook",
+    "description": "Data processing notebook from template"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f558da94-3a8f-8ea1-44bf-a172ebb4c074"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "FinanceAnalytics",
+    "description": "Analytics lakehouse for Finance department"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "70e7aa8f-e505-bda0-4984-7dfefdcc8862"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "DataAnalysis",
+    "description": "Analysis notebook with lakehouse access"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b60b1710-8f52-b953-4ab4-5d032eba3bd1"
+  }
+}
