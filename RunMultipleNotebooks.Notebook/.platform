@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "RunMultipleNotebooks"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "1b02faa4-4ebe-a04f-4b16-39dccff405ff"
+  }
+}

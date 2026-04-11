@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "MarketingAnalytics",
+    "description": "Analytics lakehouse for Marketing department"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dd37598f-dde2-aee3-4604-1cd26486e2dd"
+  }
+}
