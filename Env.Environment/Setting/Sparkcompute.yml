@@ -1,4 +1,4 @@
-enable_native_execution_engine: false
+enable_native_execution_engine: true
 instance_pool_id: f6e8f327-4208-46d9-982f-c068f1178197
 live_pool:
   state: Enabled
