@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Lakehouse",
+    "displayName": "GetStartedDataFactoryTutorial"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b681c5a7-dd6b-aeb7-4f0a-07b5b7fb114b"
+  }
+}

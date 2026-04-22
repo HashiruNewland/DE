@@ -1,0 +1,55 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "InvokeCopyJob",
+        "typeProperties": {
+          "copyJobId": "82394e80-9b2f-a52b-49bd-dc8609e8451e",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "externalReferences": {
+          "connection": "999f0bb4-8468-497f-8208-3754498acb04"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy job1",
+        "dependsOn": []
+      },
+      {
+        "type": "Office365Email",
+        "typeProperties": {
+          "body": "@concat('RunID = ', pipeline().RunId, ' ; ', 'Files written: ', activity('Copy job1').output.value[0].output.filesWritten, ' ; ','Throughput: ', activity('Copy job1').output.value[0].output.throughput,' ; ','Time to copy: ', activity('Copy job1').output.executionDuration,' ; ','Time in queue: ', activity('Copy job1').output.durationInQueue)",
+          "to": "hnewland@newlandtechnologies.com",
+          "subject": {
+            "value": "@concat('DI in an Hour Pipeline Succeeded with Pipeline Run Id', pipeline().RunId)",
+            "type": "Expression"
+          }
+        },
+        "externalReferences": {
+          "connection": "14d392b1-dc99-4012-9650-2790f9050cc9"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Office365Email1",
+        "dependsOn": [
+          {
+            "activity": "Copy job1",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

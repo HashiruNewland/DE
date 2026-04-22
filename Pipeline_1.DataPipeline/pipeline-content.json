@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "AzureFunctionActivity",
+        "typeProperties": {
+          "functionName": "hello_fabric",
+          "functionSetId": "40c84372-91d9-bdf5-4b25-319d95ffaa07",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "name": {
+              "value": "@pipeline().PipelineName",
+              "type": "Expression"
+            }
+          }
+        },
+        "externalReferences": {
+          "connection": "2ef4a62b-9ec8-4301-afa0-2d6f88a8f95b"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Functions1",
+        "dependsOn": []
+      }
+    ]
+  }
+}

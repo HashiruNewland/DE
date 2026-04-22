@@ -1,0 +1,34 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "AzureBlobStorageToDataflowThroughPipeline",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "data": {
+      "queryId": "72febd01-a8e0-423d-ba94-56c0e69b075c",
+      "queryName": "data",
+      "loadEnabled": false
+    },
+    "data_DataDestination": {
+      "queryId": "2e79463c-5a1e-4551-84ac-7b08beb68c54",
+      "queryName": "data_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "https://myadlsg.blob.core.windows.net/",
+      "kind": "AzureBlobs",
+      "connectionId": "{\"ClusterId\":\"880bad63-bb7f-4fa0-b404-bca94c7f8e67\",\"DatasourceId\":\"1cbcf623-9e38-4443-a09f-5ce507c0cda2\"}"
+    },
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"880bad63-bb7f-4fa0-b404-bca94c7f8e67\",\"DatasourceId\":\"0ab6e067-2a4a-47ec-b846-35729b7b4c81\"}"
+    }
+  ]
+}

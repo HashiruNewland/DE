@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "MaterializedLakeView_DataQuality (automatically generated)",
+    "description": "Materialized Lake View Data Quality Semantic Model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a9d28f76-01c8-bdf6-4ff0-c13e9e0b77b8"
+  }
+}
