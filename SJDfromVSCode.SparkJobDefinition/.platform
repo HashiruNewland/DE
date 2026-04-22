@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SparkJobDefinition",
+    "displayName": "SJDfromVSCode",
+    "description": ""
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f5840333-2e9d-9e2e-4348-ce25491e1d98"
+  }
+}

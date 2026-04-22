@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "InvokeCopyJob",
+        "typeProperties": {
+          "copyJobId": "ecc0fb3c-73f4-b4be-4cdd-51d47e2029a9",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "externalReferences": {
+          "connection": "999f0bb4-8468-497f-8208-3754498acb04"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "RunAzureDataLakeGen2ToLakehouseThroughPipeline",
+        "dependsOn": []
+      }
+    ]
+  }
+}

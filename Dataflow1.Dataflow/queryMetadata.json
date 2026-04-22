@@ -1,0 +1,42 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "Dataflow1",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "bronze parquet": {
+      "queryId": "b100ed32-87d7-4085-87f2-7b7354bced4c",
+      "queryName": "bronze parquet"
+    },
+    "Generated-NYC-Taxi-Green-Discounts": {
+      "queryId": "b431de4e-5164-4c39-84c3-8e6d852f23c4",
+      "queryName": "Generated-NYC-Taxi-Green-Discounts"
+    },
+    "Output": {
+      "queryId": "60b81758-791c-4021-af31-e1d7bf6e452e",
+      "queryName": "Output",
+      "loadEnabled": false
+    },
+    "Output_DataDestination": {
+      "queryId": "407ae02e-8425-4d5e-b55f-67c4940af504",
+      "queryName": "Output_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"880bad63-bb7f-4fa0-b404-bca94c7f8e67\",\"DatasourceId\":\"01e073d7-0ed2-4ff2-931d-56e8ae4aa026\"}"
+    },
+    {
+      "path": "https://raw.githubusercontent.com/ekote/azure-architect/master/Generated-NYC-Taxi-Green-Discounts.csv",
+      "kind": "Web",
+      "connectionId": "{\"ClusterId\":\"880bad63-bb7f-4fa0-b404-bca94c7f8e67\",\"DatasourceId\":\"c6d32ec8-ddb1-40b9-8273-c46cdef9072f\"}"
+    }
+  ]
+}

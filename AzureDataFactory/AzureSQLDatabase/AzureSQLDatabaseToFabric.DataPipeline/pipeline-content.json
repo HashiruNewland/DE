@@ -1,0 +1,252 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "AzureSqlSource",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00",
+            "datasetSettings": {
+              "type": "AzureSqlTable",
+              "typeProperties": {
+                "schema": "SalesLT",
+                "table": "Customer",
+                "database": "azuredbToFabric"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "aab6091e-a177-41bc-b8af-3eb94e3d6b09"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "applyVOrder": false,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "salesLT",
+                "table": "Customer"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "GetStartedDataFactoryTutorial",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "b681c5a7-dd6b-aeb7-4f0a-07b5b7fb114b",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "CustomerID",
+                  "type": "Int32",
+                  "physicalType": "int"
+                },
+                "sink": {
+                  "name": "CustomerID",
+                  "physicalType": "integer"
+                }
+              },
+              {
+                "source": {
+                  "name": "NameStyle",
+                  "type": "Boolean",
+                  "physicalType": "bit"
+                },
+                "sink": {
+                  "name": "NameStyle",
+                  "physicalType": "boolean"
+                }
+              },
+              {
+                "source": {
+                  "name": "Title",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "8"
+                },
+                "sink": {
+                  "name": "Title",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "FirstName",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "FirstName",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "MiddleName",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "MiddleName",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "LastName",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "LastName",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Suffix",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "10"
+                },
+                "sink": {
+                  "name": "Suffix",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "CompanyName",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "128"
+                },
+                "sink": {
+                  "name": "CompanyName",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "SalesPerson",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "256"
+                },
+                "sink": {
+                  "name": "SalesPerson",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "EmailAddress",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "50"
+                },
+                "sink": {
+                  "name": "EmailAddress",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "Phone",
+                  "type": "String",
+                  "physicalType": "nvarchar",
+                  "length": "25"
+                },
+                "sink": {
+                  "name": "Phone",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PasswordHash",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "128"
+                },
+                "sink": {
+                  "name": "PasswordHash",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PasswordSalt",
+                  "type": "String",
+                  "physicalType": "varchar",
+                  "length": "10"
+                },
+                "sink": {
+                  "name": "PasswordSalt",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "rowguid",
+                  "type": "Guid",
+                  "physicalType": "uniqueidentifier"
+                },
+                "sink": {
+                  "name": "rowguid",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "ModifiedDate",
+                  "type": "DateTime",
+                  "physicalType": "datetime"
+                },
+                "sink": {
+                  "name": "ModifiedDate",
+                  "physicalType": "timestamp"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "dependsOn": []
+      }
+    ]
+  }
+}

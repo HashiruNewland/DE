@@ -1,0 +1,294 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Copy",
+        "typeProperties": {
+          "source": {
+            "type": "ParquetSource",
+            "storeSettings": {
+              "type": "AzureBlobFSReadSettings",
+              "recursive": false,
+              "enablePartitionDiscovery": false
+            },
+            "formatSettings": {
+              "type": "ParquetReadSettings"
+            },
+            "datasetSettings": {
+              "type": "Parquet",
+              "typeProperties": {
+                "location": {
+                  "type": "AzureBlobFSLocation",
+                  "fileSystem": "data",
+                  "fileName": "yellow_tripdata_2022-01.parquet"
+                },
+                "compressionCodec": "snappy"
+              },
+              "schema": [],
+              "externalReferences": {
+                "connection": "b785158f-ba37-4bae-87b5-a2936be7c5de"
+              },
+              "annotations": []
+            }
+          },
+          "sink": {
+            "type": "LakehouseTableSink",
+            "tableActionOption": "Append",
+            "applyVOrder": false,
+            "partitionOption": "None",
+            "datasetSettings": {
+              "type": "LakehouseTable",
+              "typeProperties": {
+                "schema": "dbo",
+                "table": "Drivers"
+              },
+              "schema": [],
+              "linkedService": {
+                "name": "GetStartedDataFactoryTutorial",
+                "properties": {
+                  "type": "Lakehouse",
+                  "typeProperties": {
+                    "artifactId": "b681c5a7-dd6b-aeb7-4f0a-07b5b7fb114b",
+                    "workspaceId": "00000000-0000-0000-0000-000000000000",
+                    "rootFolder": "Tables"
+                  },
+                  "annotations": []
+                }
+              },
+              "annotations": []
+            }
+          },
+          "translator": {
+            "type": "TabularTranslator",
+            "mappings": [
+              {
+                "source": {
+                  "name": "VendorID",
+                  "type": "Int64",
+                  "physicalType": "INT64"
+                },
+                "sink": {
+                  "name": "VendorID",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "tpep_pickup_datetime",
+                  "type": "DateTime",
+                  "physicalType": "TIMESTAMP_MICROS"
+                },
+                "sink": {
+                  "name": "tpep_pickup_datetime",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "tpep_dropoff_datetime",
+                  "type": "DateTime",
+                  "physicalType": "TIMESTAMP_MICROS"
+                },
+                "sink": {
+                  "name": "tpep_dropoff_datetime",
+                  "physicalType": "timestamp"
+                }
+              },
+              {
+                "source": {
+                  "name": "passenger_count",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "passenger_count",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "trip_distance",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "trip_distance",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "RatecodeID",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "RatecodeID",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "store_and_fwd_flag",
+                  "type": "String",
+                  "physicalType": "STRING"
+                },
+                "sink": {
+                  "name": "store_and_fwd_flag",
+                  "physicalType": "string"
+                }
+              },
+              {
+                "source": {
+                  "name": "PULocationID",
+                  "type": "Int64",
+                  "physicalType": "INT64"
+                },
+                "sink": {
+                  "name": "PULocationID",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "DOLocationID",
+                  "type": "Int64",
+                  "physicalType": "INT64"
+                },
+                "sink": {
+                  "name": "DOLocationID",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "payment_type",
+                  "type": "Int64",
+                  "physicalType": "INT64"
+                },
+                "sink": {
+                  "name": "payment_type",
+                  "physicalType": "long"
+                }
+              },
+              {
+                "source": {
+                  "name": "fare_amount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "fare_amount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "extra",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "extra",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "mta_tax",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "mta_tax",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "tip_amount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "tip_amount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "tolls_amount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "tolls_amount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "improvement_surcharge",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "improvement_surcharge",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "total_amount",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "total_amount",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "congestion_surcharge",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "congestion_surcharge",
+                  "physicalType": "double"
+                }
+              },
+              {
+                "source": {
+                  "name": "airport_fee",
+                  "type": "Double",
+                  "physicalType": "DOUBLE"
+                },
+                "sink": {
+                  "name": "airport_fee",
+                  "physicalType": "double"
+                }
+              }
+            ],
+            "typeConversion": true,
+            "typeConversionSettings": {
+              "allowDataTruncation": true,
+              "treatBooleanAsNumber": false
+            }
+          },
+          "enableStaging": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Copy data1",
+        "dependsOn": []
+      }
+    ]
+  }
+}
